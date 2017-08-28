@@ -1,0 +1,89 @@
+.welcome-page {
+  background-image: url('pokerchips.jpg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.play-page {
+  background-image: url('blackjack-img.png');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.heart {
+  color: maroon;
+}
+
+.main-text {
+  color: black;
+  font-size: 50pt;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 900px;
+  border-radius: 10pt;
+}
+
+.play-button {
+  background-color: maroon;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 15px;
+  border-radius: 5px;
+}
+
+.button-wrapper {
+  text-align: center;
+  padding-top: 15px;
+}
+
+footer.page-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  padding-left: 10px;
+  padding-top: 0;
+  padding-right: 10px;
+  border-top: solid 2px black;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+footer.page-footer-play {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  padding-left: 10px;
+  padding-top: 0;
+  padding-right: 10px;
+  border-top: solid 2px black;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.nav-wrapper {
+  background-color: black;
+  border-bottom: solid 2pt white;
+}
+
+.nav-wrapper-play {
+  background-color: black;
+  border-bottom: solid 2px black;
+}
+
+.text-wrapper {
+  padding-top: 100px;
+}
+
+.tagline {
+  font-size: 7pt;
+  text-align: left;
+}
