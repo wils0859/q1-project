@@ -87,3 +87,33 @@ footer.page-footer-play {
   font-size: 7pt;
   text-align: left;
 }
+
+.option-wrapper {
+  text-align: center;
+}
+
+.option-button {
+  background-color: maroon;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 10pt;
+  border-radius: 50pt;
+  font-family: 'Frijole', cursive;
+}
+h1 {
+  font-size: 30pt;
+  color: black;
+  margin-bottom: 200pt;
+  margin-left: 10px;
+  font-family: 'Walter Turncoat', cursive;
+}
+
+h2 {
+  font-size: 30pt;
+  color: black;
+  margin-left: 10px;
+  font-family: 'Walter Turncoat', cursive;
+}
