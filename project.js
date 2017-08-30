@@ -4,6 +4,9 @@ $(document).ready(() => {
   dealerScore = []
   totalPlayerScore = 0
   totalDealerScore = 0
+  revealCard = null
+  hiddenCardImg = null
+  hiddenCard = []
 
   // Make the deck
   let renderDeck = $.getJSON('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
@@ -71,36 +74,40 @@ $(document).ready(() => {
         if (dealCard.status !== 200) {
           return;
         }
-        let cardImg = ('backside-card.jpg')
-        let cardValue = (dealCard.responseJSON.cards[0]['value'])
-        if (cardValue === "JACK") {
-          cardValue = "10"
+        let revealCard = (dealCard.responseJSON.cards[0].image)
+        let hiddenCardImg = ('img/backside-card.jpg')
+        let hiddenCardValue = (dealCard.responseJSON.cards[0]['value'])
+        if (hiddenCardValue === "JACK") {
+          hiddenCardValue = "10"
         }
-        if (cardValue === "QUEEN") {
-          cardValue = "10"
+        if (hiddenCardValue === "QUEEN") {
+          hiddenCardValue = "10"
         }
-        if (cardValue === "KING") {
-          cardValue = "10"
+        if (hiddenCardValue === "KING") {
+          hiddenCardValue = "10"
         }
-        if (cardValue === "ACE") {
-          cardValue = prompt('Do you want your ace to be valued at 1 or 11?')
-          if (cardValue !== "1" && cardValue !== '11') {
+        if (hiddenCardValue === "ACE") {
+          hiddenCardValue = prompt('Do you want your ace to be valued at 1 or 11?')
+          if (hiddenCardValue !== "1" && hiddenCardValue !== '11') {
             prompt('Nice try, please pick either 1 or 11')
           }
         } else {
-          cardValue = cardValue
+          hiddenCardValue = hiddenCardValue
         }
 
-        cardValue = parseInt(cardValue)
-        dealerScore.push(cardValue)
+        hiddenCardValue = parseInt(hiddenCardValue)
+        dealerScore.push(hiddenCardValue)
+        hiddenCard.push(hiddenCardValue)
         totalDealerScore = dealerScore.reduce(function(sum, value) {
           return sum + value
         })
         console.log(dealerScore)
-        $('#dealers-cards').append(`<img src="${cardImg}">`)
+        console.log(hiddenCardValue)
+        console.log(hiddenCard)
+        $('#dealers-cards').append(`<img src="${hiddenCardImg}">`)
+        // $('#dealers-cards').append(`<img src="${revealCard}">`)
       })
     }
-
 
     // Meat and taters of dealing a card to the player
     function toPlayer() {
@@ -133,12 +140,11 @@ $(document).ready(() => {
         totalPlayerScore = playerScore.reduce(function(sum, value) {
           return sum + value
         }, 0)
-
         $('#players-cards').append(`<img src="${cardImg}">`)
         if (totalPlayerScore > 21) {
-        window.alert('You busted...you lose!')
-        location.reload()
-      }
+          window.alert('You busted...you lose!')
+          location.reload()
+        }
       })
     }
 
@@ -147,18 +153,10 @@ $(document).ready(() => {
     $('#hit-me').click(() => {
       if (totalPlayerScore < 22) {
         toPlayer()
-      } console.log(totalPlayerScore)
-      if (totalPlayerScore > 21) {
-      window.alert('You busted...you lose!')
-      location.reload()
-    }
-  })
+      }
+      console.log(totalPlayerScore)
+    })
 
-
-      if (totalPlayerScore > 21) {
-      window.alert('You busted...you lose!')
-      location.reload()
-    }
 
 
     // Stay and see who wins
@@ -169,20 +167,22 @@ $(document).ready(() => {
       whoWon()
     })
 
+
+    // Figure out who won
     function whoWon() {
       if (totalDealerScore > 21) {
-        window.alert('Dealer busts, you win!')
+        window.alert("The dealer had a hidden " + hiddenCard[0] + ".  The dealer busts, you win!")
         location.reload()
       }
       if (totalDealerScore > 16 && totalDealerScore < 22) {
         if (totalDealerScore < totalPlayerScore) {
-          window.alert('You win!')
+          window.alert("The dealer had a hidden " + hiddenCard[0] + ".  You win!")
           location.reload()
         } else if (totalDealerScore > totalPlayerScore) {
-          window.alert('Dealer wins!')
+          window.alert("The dealer had a hidden " + hiddenCard[0] + ".  Dealer wins!")
           location.reload()
         } else if (totalDealerScore = totalPlayerScore) {
-          window.alert("It's a tie, dealer wins!")
+          window.alert("The dealer had a hidden " + hiddenCard[0] + ".  It's a tie, dealer wins!")
           location.reload()
         }
       }
@@ -193,8 +193,3 @@ $(document).ready(() => {
     })
   })
 })
-
-
-
-// $('#new-hand').click((event) => {
-//   event.preventDefault

@@ -15,36 +15,34 @@
   <title>Blackjack Hero</title>
 </head>
 
-<body class='play-page'>
+<body class='play-page-jack'>
   <nav>
-    <div class="nav-wrapper nav-wrapper-play">
-      <a href="index.html" class="brand-logo right"><i class="fa fa-heart heart"></i> Blackjack Hero</a>
+    <div class="nav-wrapper nav-wrapper-jack">
+      <a href="index.html" class="brand-logo right"><i class="fa fa-heart heart"></i> Jack Blackjack</a>
       </ul>
     </div>
   </nav>
-  <audio id="dealing-card" src="cardSlide3.wav"></audio>
-  <audio id="shuffle-deck" src="CardFan2.wav"></audio>
 <div class="option-wrapper">
-  <a class="waves-effect waves-red btn hoverable option-button z-depth-2 tooltipped" id="hit-me" data-tooltip="Gimme another card!"><i class="material-icons left"><i class="fa fa-gavel" aria-hidden="true"></i></i>Hit me!</a>
-  <a class="waves-effect waves-red btn hoverable option-button z-depth-2 tooltipped" id="stay" data-tooltip="I'm good, your move dealer!"><i class="material-icons left"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></i>Stay</a>
-  <a class="waves-effect waves-red btn hoverable option-button z-depth-2 tooltipped" id="new-hand" data-tooltip="Play another hand"><i class="material-icons left"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></i>New hand</a>
+  <a class="waves-effect waves-red btn hoverable option-button-jack z-depth-2 tooltipped" id="hit-me" data-tooltip="Gimme another card!"><i class="material-icons left"><i class="fa fa-gavel" aria-hidden="true"></i></i>Hit me!</a>
+  <a class="waves-effect waves-red btn hoverable option-button-jack z-depth-2 tooltipped" id="stay" data-tooltip="I'm good, your move dealer!"><i class="material-icons left"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></i>Stay</a>
+  <a class="waves-effect waves-red btn hoverable option-button-jack z-depth-2 tooltipped" id="new-hand" data-tooltip="Play another hand"><i class="material-icons left"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></i>New hand</a>
 </div>
 <div>
-<h1>Dealer:</h1>
+<h1 class="jack-hand">Dealer:</h1>
 </div>
   <div id="dealers-cards">
 
   </div>
 
   <div>
-    <h2>You:</h2>
+    <h2 class="jack-hand">You:</h2>
     <div id="players-cards">
 
     </div>
   </div>
   <div class="fixed-action-btn">
-      <a class="btn-floating btn-large red theme-btn">
-        <i class="large material-icons tooltipped z-depth-2" data-tooltip="Change Theme">visibility</i>
+      <a class="btn-floating btn-large red theme-btn ">
+        <i class="large material-icons tooltippedz-depth-2" data-tooltip="Change Theme">visibility</i>
       </a>
       <ul>
         <li><a class="btn-floating red tooltipped" href="play.html" data-tooltip="Casino Floor"><i class="material-icons">casino</i></a></li>
@@ -53,7 +51,7 @@
         <li><a class="btn-floating black tooltipped" href="space.html" data-tooltip="Outer Space"><i class="material-icons">stars</i></a></li>
       </ul>
     </div>
-  <footer class="page-footer-play">
+  <footer class="page-footer-jack">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">

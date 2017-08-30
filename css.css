@@ -1,5 +1,5 @@
 .welcome-page {
-  background-image: url('pokerchips.jpg');
+  background-image: url('img/pokerchips.jpg');
   background-repeat: no-repeat;
   background-attachment:fixed;
   background-size: cover;
@@ -7,7 +7,38 @@
 }
 
 .play-page {
-  background-image: url('blackjack-img.png');
+  background-image: url('img/blackjack-img.png');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.play-page-jack {
+  background-image: url('img/jack-black.jpg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+}
+
+.play-page-beach {
+  background-image: url('img/beach-img.jpg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.play-page-space {
+  background-image: url('img/space-play.jpg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.contact-page {
+  background-image: url('img/contact-background.jpg');
   background-repeat: no-repeat;
   background-attachment:fixed;
   background-size: cover;
@@ -69,6 +100,47 @@ footer.page-footer-play {
   padding-bottom: 10px;
 }
 
+footer.page-footer-jack {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  padding-left: 10px;
+  padding-top: 0;
+  padding-right: 10px;
+  border-top: solid 2px black;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+footer.page-footer-beach {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: teal;
+  padding-left: 10px;
+  padding-top: 0;
+  padding-right: 10px;
+  border-top: solid 2px black;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+footer.page-footer-space {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  padding-left: 10px;
+  padding-top: 0;
+  padding-right: 10px;
+  border-top: solid 2px white;
+  text-align: left;
+  padding-bottom: 10px;
+}
 .nav-wrapper {
   background-color: black;
   border-bottom: solid 2pt white;
@@ -79,8 +151,31 @@ footer.page-footer-play {
   border-bottom: solid 2px black;
 }
 
+.nav-wrapper-jack {
+  background-color: red;
+  border-bottom: solid 2pt black;
+}
+
+.nav-wrapper-beach {
+  background-color: teal;
+  border-bottom: solid 2px black;
+}
+
+.nav-wrapper-space {
+  background-color: black;
+  border-bottom: solid 2px white;
+}
+
 .text-wrapper {
   padding-top: 100px;
+}
+
+.theme-btn {
+  margin-bottom: 70px;
+}
+
+i.large.material-icons {
+  background-color: maroon;
 }
 
 .tagline {
@@ -102,13 +197,61 @@ footer.page-footer-play {
   font-size: 10pt;
   border-radius: 50pt;
   font-family: 'Frijole', cursive;
+  border: solid 1pt black;
 }
+
+.option-button-beach {
+  background-color: yellow;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 10pt;
+  border-radius: 50pt;
+  font-family: 'Frijole', cursive;
+  border: solid 1pt black;
+  color: black;
+}
+
+.option-button-jack {
+  background-color: red;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 10pt;
+  border-radius: 50pt;
+  font-family: 'Frijole', cursive;
+  border: solid 1pt black;
+  color: black;
+}
+
+.option-button-space {
+  background-color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 10pt;
+  border-radius: 50pt;
+  font-family: 'Frijole', cursive;
+  border: solid 1pt white;
+  color: white;
+}
+
 h1 {
   font-size: 30pt;
   color: black;
   margin-left: 10px;
   font-family: 'Walter Turncoat', cursive;
   padding-top: 0;
+  width: 149px;
+  background-color: green;
+  border: solid 2pt black;
+  border-radius: 7px;
 
 }
 
@@ -117,10 +260,65 @@ h2 {
   color: black;
   margin-left: 10px;
   font-family: 'Walter Turncoat', cursive;
+  width: 82px;
+  background-color: green;
+  border-radius: 7px;
+  border: solid 2pt black;
+  padding-left: 5px;
 }
 
+.jack-hand {
+  background-color: red;
+}
+
+.beach-hand {
+  background-color: yellow;
+}
+
+.space-hand {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
 img {
   height: 150pt;
   margin-right: 20px;
   margin-left: 20px;
+}
+
+form.col.s12 {
+  width: 800px;
+  margin-left: 310px;
+  background-color: rgba(0, 0, 0, 1);
+  margin-top: 30px;
+  border-radius: 10px;
+  color: white;
+}
+
+#email-part {
+  margin-left: 0;
+  width: 800px;
+  background-color:rgba(0, 0, 0, 0);
+}
+
+.hiddendiv .common {
+  display:  none;
+}
+
+#_lpform_first_name {
+  display: none;
+}
+
+#_lpform_first_name_icon {
+  display: none;
+}
+
+.hahaha {
+  width: 800px;
+}
+
+.row .col.s12.hehehe {
+  width: 850px;
+  margin-left: 300px;
+  margin-top: 100px;
+  padding-top: 10px;
 }
