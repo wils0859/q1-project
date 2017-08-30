@@ -159,7 +159,7 @@ $(document).ready(() => {
 
 
 
-    // Stay and see who wins
+    // Stay and play out the dealer to see who wins
     $('#stay').click(() => {
       if (totalDealerScore < 16) {
         toDealer()
@@ -188,6 +188,8 @@ $(document).ready(() => {
       }
     }
 
+
+    // Start a new hand before the old one ended
     $('#new-hand').click((event) => {
       location.reload()
     })

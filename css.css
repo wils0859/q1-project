@@ -1,7 +1,7 @@
 .welcome-page {
   background-image: url('img/pokerchips.jpg');
   background-repeat: no-repeat;
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-size: cover;
   font-family: 'Baloo Bhaijaan', cursive;
 }
@@ -9,7 +9,7 @@
 .play-page {
   background-image: url('img/blackjack-img.png');
   background-repeat: no-repeat;
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-size: cover;
   font-family: 'Baloo Bhaijaan', cursive;
 }
@@ -17,14 +17,14 @@
 .play-page-jack {
   background-image: url('img/jack-black.jpg');
   background-repeat: no-repeat;
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-size: cover;
 }
 
 .play-page-beach {
   background-image: url('img/beach-img.jpg');
   background-repeat: no-repeat;
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-size: cover;
   font-family: 'Baloo Bhaijaan', cursive;
 }
@@ -32,7 +32,7 @@
 .play-page-space {
   background-image: url('img/space-play.jpg');
   background-repeat: no-repeat;
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-size: cover;
   font-family: 'Baloo Bhaijaan', cursive;
 }
@@ -40,7 +40,7 @@
 .contact-page {
   background-image: url('img/contact-background.jpg');
   background-repeat: no-repeat;
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-size: cover;
   font-family: 'Baloo Bhaijaan', cursive;
 }
@@ -50,11 +50,21 @@
 }
 
 .main-text {
-  color: black;
-  font-size: 50pt;
+  color: white;
+  font-size: 45pt;
   margin: auto;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 900px;
+  border-radius: 10pt;
+}
+
+.main-text-contact {
+  color: white;
+  font-size: 25pt;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
   width: 900px;
   border-radius: 10pt;
 }
@@ -81,7 +91,7 @@ footer.page-footer {
   padding-left: 10px;
   padding-top: 0;
   padding-right: 10px;
-  border-top: solid 2px black;
+  border-top: solid 2px white;
   text-align: left;
   padding-bottom: 10px;
 }
@@ -95,7 +105,7 @@ footer.page-footer-play {
   padding-left: 10px;
   padding-top: 0;
   padding-right: 10px;
-  border-top: solid 2px black;
+  border-top: solid 2px white;
   text-align: left;
   padding-bottom: 10px;
 }
@@ -141,6 +151,7 @@ footer.page-footer-space {
   text-align: left;
   padding-bottom: 10px;
 }
+
 .nav-wrapper {
   background-color: black;
   border-bottom: solid 2pt white;
@@ -148,7 +159,7 @@ footer.page-footer-space {
 
 .nav-wrapper-play {
   background-color: black;
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px white;
 }
 
 .nav-wrapper-jack {
@@ -167,7 +178,11 @@ footer.page-footer-space {
 }
 
 .text-wrapper {
-  padding-top: 100px;
+  padding-top: 150px;
+}
+
+.text-wrapper-contact {
+  padding-top: 50px;
 }
 
 .theme-btn {
@@ -252,7 +267,6 @@ h1 {
   background-color: green;
   border: solid 2pt black;
   border-radius: 7px;
-
 }
 
 h2 {
@@ -279,6 +293,7 @@ h2 {
   background-color: rgba(0, 0, 0, 0);
   color: white;
 }
+
 img {
   height: 150pt;
   margin-right: 20px;
@@ -297,11 +312,11 @@ form.col.s12 {
 #email-part {
   margin-left: 0;
   width: 800px;
-  background-color:rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .hiddendiv .common {
-  display:  none;
+  display: none;
 }
 
 #_lpform_first_name {
@@ -319,6 +334,12 @@ form.col.s12 {
 .row .col.s12.hehehe {
   width: 850px;
   margin-left: 300px;
-  margin-top: 100px;
-  padding-top: 10px;
+  padding-top: 50px;
+}
+
+.submit-btn {
+  background-color: maroon;
+  text-align: center;
+  
+
 }
