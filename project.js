@@ -7,6 +7,8 @@ $(document).ready(() => {
   revealCard = null
   hiddenCardImg = null
   hiddenCard = []
+  backOfCard = null
+  frontOfCard = null
 
   // Make the deck
   let renderDeck = $.getJSON('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
@@ -104,8 +106,9 @@ $(document).ready(() => {
         console.log(dealerScore)
         console.log(hiddenCardValue)
         console.log(hiddenCard)
-        $('#dealers-cards').append(`<img src="${hiddenCardImg}">`)
-        // $('#dealers-cards').append(`<img src="${revealCard}">`)
+        backOfCard = $('#dealers-cards').append(`<img src="${hiddenCardImg}" class="card-back">`)
+        frontOfCard = $('#dealers-cards').append(`<img src="${revealCard}" class="card-front">`)
+        $('.card-front').hide()
       })
     }
 
@@ -161,6 +164,8 @@ $(document).ready(() => {
 
     // Stay and play out the dealer to see who wins
     $('#stay').click(() => {
+      $('.card-back').hide()
+      $('.card-front').show()
       if (totalDealerScore < 16) {
         toDealer()
       }
@@ -171,18 +176,18 @@ $(document).ready(() => {
     // Figure out who won
     function whoWon() {
       if (totalDealerScore > 21) {
-        window.alert("The dealer had a hidden " + hiddenCard[0] + ".  The dealer busts, you win!")
+        window.alert("The dealer busts, you win!")
         location.reload()
       }
       if (totalDealerScore > 16 && totalDealerScore < 22) {
         if (totalDealerScore < totalPlayerScore) {
-          window.alert("The dealer had a hidden " + hiddenCard[0] + ".  You win!")
+          window.alert("You win!")
           location.reload()
         } else if (totalDealerScore > totalPlayerScore) {
-          window.alert("The dealer had a hidden " + hiddenCard[0] + ".  Dealer wins!")
+          window.alert("Dealer wins!")
           location.reload()
         } else if (totalDealerScore = totalPlayerScore) {
-          window.alert("The dealer had a hidden " + hiddenCard[0] + ".  It's a tie, dealer wins!")
+          window.alert("It's a tie, dealer wins!")
           location.reload()
         }
       }
@@ -192,6 +197,11 @@ $(document).ready(() => {
     // Start a new hand before the old one ended
     $('#new-hand').click((event) => {
       location.reload()
-    })
+      })
+
+    // Clear the submitted contact form
+    $('#submit-button').click((event) => {
+    window.alert('sdfdsf')
+  })
   })
 })

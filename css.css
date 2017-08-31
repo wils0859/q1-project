@@ -37,6 +37,12 @@
   font-family: 'Baloo Bhaijaan', cursive;
 }
 
+.play-page-ken {
+  background-image: url('img/ken.png');
+  background-attachment: fixed;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
 .contact-page {
   background-image: url('img/contact-background.jpg');
   background-repeat: no-repeat;
@@ -152,6 +158,20 @@ footer.page-footer-space {
   padding-bottom: 10px;
 }
 
+footer.page-footer-ken {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: orange;
+  padding-left: 10px;
+  padding-top: 0;
+  padding-right: 10px;
+  border-top: solid 2px black;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
 .nav-wrapper {
   background-color: black;
   border-bottom: solid 2pt white;
@@ -175,6 +195,11 @@ footer.page-footer-space {
 .nav-wrapper-space {
   background-color: black;
   border-bottom: solid 2px white;
+}
+
+.nav-wrapper-ken {
+  background-color: orange;
+  border-bottom: solid 2px black;
 }
 
 .text-wrapper {
@@ -257,6 +282,20 @@ i.large.material-icons {
   color: white;
 }
 
+.option-button-ken {
+  background-color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 10pt;
+  border-radius: 50pt;
+  font-family: 'Frijole', cursive;
+  border: solid 1pt black;
+  color: orange;
+}
+
 h1 {
   font-size: 30pt;
   color: black;
@@ -292,6 +331,11 @@ h2 {
 .space-hand {
   background-color: rgba(0, 0, 0, 0);
   color: white;
+}
+
+.ken-hand {
+  background-color: orange;
+  color: black;
 }
 
 img {
@@ -340,6 +384,6 @@ form.col.s12 {
 .submit-btn {
   background-color: maroon;
   text-align: center;
-  
-
+  padding-right: 15px;
+  padding-left: 15px;
 }
