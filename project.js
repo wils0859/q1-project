@@ -1,4 +1,6 @@
 $(document).ready(() => {
+
+  // Global variables
   deckID = ''
   playerScore = []
   dealerScore = []
@@ -6,9 +8,9 @@ $(document).ready(() => {
   totalDealerScore = 0
   revealCard = null
   hiddenCardImg = null
-  hiddenCard = []
   backOfCard = null
   frontOfCard = null
+
 
   // Make the deck
   let renderDeck = $.getJSON('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
@@ -29,6 +31,10 @@ $(document).ready(() => {
     toPlayer()
     toDealer()
     toPlayer()
+    if (totalPlayerScore === 21) {
+      window.alert('You were dealt a BLACKJACK, you WIN!')
+    location.reload()
+  }
 
 
     // Meat and taters of dealing to the dealer
@@ -50,10 +56,8 @@ $(document).ready(() => {
           cardValue = "10"
         }
         if (cardValue === "ACE") {
-          cardValue = prompt('Do you want your ace to be valued at 1 or 11?')
-          if (cardValue !== "1" && cardValue !== '11') {
-            prompt('Nice try, please pick either 1 or 11')
-          }
+          cardValue = "11"
+
         } else {
           cardValue = cardValue
         }
@@ -63,9 +67,12 @@ $(document).ready(() => {
         totalDealerScore = dealerScore.reduce(function(sum, value) {
           return sum + value
         })
+
         console.log(dealerScore)
         $('#dealers-cards').append(`<img src="${cardImg}">`)
+        automateAce()
       })
+
     }
 
 
@@ -89,23 +96,24 @@ $(document).ready(() => {
           hiddenCardValue = "10"
         }
         if (hiddenCardValue === "ACE") {
-          hiddenCardValue = prompt('Do you want your ace to be valued at 1 or 11?')
-          if (hiddenCardValue !== "1" && hiddenCardValue !== '11') {
-            prompt('Nice try, please pick either 1 or 11')
-          }
+          hiddenCardValue = "11"
+
+          // hiddenCardValue = prompt('Do you want your ace to be valued at 1 or 11?')
+          // if (hiddenCardValue !== "1" && hiddenCardValue !== '11') {
+          //   prompt('Nice try, please pick either 1 or 11')
+          // }
         } else {
           hiddenCardValue = hiddenCardValue
         }
 
         hiddenCardValue = parseInt(hiddenCardValue)
         dealerScore.push(hiddenCardValue)
-        hiddenCard.push(hiddenCardValue)
         totalDealerScore = dealerScore.reduce(function(sum, value) {
           return sum + value
         })
+
         console.log(dealerScore)
-        console.log(hiddenCardValue)
-        console.log(hiddenCard)
+        console.log('hiddenCardValue is ' + hiddenCardValue)
         backOfCard = $('#dealers-cards').append(`<img src="${hiddenCardImg}" class="card-back">`)
         frontOfCard = $('#dealers-cards').append(`<img src="${revealCard}" class="card-front">`)
         $('.card-front').hide()
@@ -131,10 +139,11 @@ $(document).ready(() => {
           cardValue = "10"
         }
         if (cardValue === "ACE") {
-          cardValue = prompt('Do you want your ace to be valued at 1 or 11?')
-          if (cardValue !== "1" && cardValue !== '11') {
-            prompt('Nice try, please pick either 1 or 11')
-          }
+          cardValue = "11" // yer problem is here
+          // cardValue = prompt('Do you want your ace to be valued at 1 or 11?')
+          // if (cardValue !== "1" && cardValue !== '11') {
+          //   prompt('Nice try, please pick either 1 or 11')
+          // }
         } else {
           cardValue = cardValue
         }
@@ -143,7 +152,10 @@ $(document).ready(() => {
         totalPlayerScore = playerScore.reduce(function(sum, value) {
           return sum + value
         }, 0)
+
+        console.log(playerScore)
         $('#players-cards').append(`<img src="${cardImg}">`)
+        automateAce()
         if (totalPlayerScore > 21) {
           window.alert('You busted...you lose!')
           location.reload()
@@ -157,9 +169,7 @@ $(document).ready(() => {
       if (totalPlayerScore < 22) {
         toPlayer()
       }
-      console.log(totalPlayerScore)
     })
-
 
 
     // Stay and play out the dealer to see who wins
@@ -179,7 +189,7 @@ $(document).ready(() => {
         window.alert("The dealer busts, you win!")
         location.reload()
       }
-      if (totalDealerScore > 16 && totalDealerScore < 22) {
+      if (totalDealerScore > 15 && totalDealerScore < 22) {
         if (totalDealerScore < totalPlayerScore) {
           window.alert("You win!")
           location.reload()
@@ -194,14 +204,25 @@ $(document).ready(() => {
     }
 
 
+    // Make it so the game knows how to value the ace
+    function automateAce() {
+      if (dealerScore.includes(11) && totalDealerScore > 22) {
+        totalDealerScore = (totalDealerScore - 10)
+      }
+      if (playerScore.includes(11) && totalPlayerScore > 22) {
+        totalPlayerScore = (totalPlayerScore - 10)
+      }
+    }
+
+
     // Start a new hand before the old one ended
     $('#new-hand').click((event) => {
       location.reload()
-      })
+    })
 
     // Clear the submitted contact form
     $('#submit-button').click((event) => {
-    window.alert('sdfdsf')
-  })
+      window.alert('sdfdsf')
+    })
   })
 })
