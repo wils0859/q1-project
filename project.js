@@ -27,12 +27,6 @@ $(document).ready(() => {
 
 
     // Initialize game, deal first cards to dealer and player
-    let gameAudio = new Audio('audio/cardshuffle.wav')
-    $(gameAudio).bind(() => {
-      gameAudio.currentTime = 0;
-      gameAudio.play()
-    })
-    gameAudio.play()
     toDealerHiddenCard()
     toPlayer()
     toDealer()

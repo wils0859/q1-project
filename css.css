@@ -355,7 +355,7 @@ form.col.s12 {
 }
 
 #email-part {
-  margin-left: 0;
+  margin: inherit;
   width: 800px;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -387,4 +387,9 @@ form.col.s12 {
   text-align: center;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+#theme-button-div {
+  height: 100px;
+  margin-bottom: 50px;
 }
